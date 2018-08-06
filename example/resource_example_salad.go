@@ -27,7 +27,7 @@ func resourceSalad() *schema.Resource {
 }
 
 func resourceSaladCreate(d *schema.ResourceData, meta interface{}) error {
-	client := meta.(*struct{})
+	client := meta.(*client)
 
 	name := d.Get("name").(string)
 
@@ -41,7 +41,7 @@ func resourceSaladCreate(d *schema.ResourceData, meta interface{}) error {
 }
 
 func resourceSaladRead(d *schema.ResourceData, meta interface{}) error {
-	client := meta.(*struct{})
+	client := meta.(*client)
 
 	name := d.Get("name").(string)
 
@@ -58,7 +58,7 @@ func resourceSaladRead(d *schema.ResourceData, meta interface{}) error {
 }
 
 func resourceSaladUpdate(d *schema.ResourceData, meta interface{}) error {
-	client := meta.(*struct{})
+	client := meta.(*client)
 
 	name := d.Get("name").(string)
 	size := d.Get("size").(int)
@@ -76,7 +76,7 @@ func resourceSaladUpdate(d *schema.ResourceData, meta interface{}) error {
 }
 
 func resourceSaladDelete(d *schema.ResourceData, meta interface{}) error {
-	client := meta.(*struct{})
+	client := meta.(*client)
 
 	name := d.Get("name").(string)
 

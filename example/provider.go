@@ -24,11 +24,11 @@ func providerConfigure(data *schema.ResourceData) (interface{}, error) {
 		Service      string
 	}{}
 
-	svc, ok := data.GetOk("service").(string); ok {
-		options.Service = svc
+	svc, ok := data.GetOk("service"); ok {
+		options.Service = svc.(string)
 	}
 
-	// client := lib.New(options)
+	// client := lib.New(http.DefaultClient, options)
 
 	return &struct{}{}, nil
 }
